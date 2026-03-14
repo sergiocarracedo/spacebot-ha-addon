@@ -1,0 +1,21 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "c22b82519477a7498897d440cc267b8622a39c59",
+  "prompts": {
+    "7cae3dc46a774c79": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_314419e22ffe95WlSOjHhORuSm",
+        "model": "github-copilot/claude-opus-4.6"
+      },
+      "human_author": "Sergio Carracedo <hi@sergiocarracedo.es>",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 7,
+      "accepted_lines": 0,
+      "overriden_lines": 0
+    }
+  }
+}
