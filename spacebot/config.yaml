@@ -25,13 +25,6 @@ ingress_stream: true
 panel_icon: mdi:robot
 panel_title: Spacebot
 
-# Direct port access (disabled by default; user can map it in the app config UI).
-# Useful if the HA ingress path causes UI issues with absolute asset paths.
-ports:
-  19898/tcp: null
-ports_description:
-  19898/tcp: Spacebot web control panel (direct access, optional)
-
 # --- Filesystem mounts ---
 # /share is the HA shared storage directory, visible at /share on the host
 # and from the File Editor / Studio Code Server addons.
