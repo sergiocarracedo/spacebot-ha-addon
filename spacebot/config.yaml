@@ -32,16 +32,22 @@ ports:
 ports_description:
   19898/tcp: Spacebot web control panel (direct access, optional)
 
-# --- Persistent data ---
-# /data is automatically included in HA backups.
-# SPACEBOT_DIR is set to /data in run.sh, matching this mount.
+# --- Filesystem mounts ---
+# /share is the HA shared storage directory, visible at /share on the host
+# and from the File Editor / Studio Code Server addons.
+# Spacebot stores all its data under /share/spacebot (set via SPACEBOT_DIR).
+map:
+  - share:rw
+
+# --- Backups ---
+# HA includes /share in full backups automatically.
 # We exclude regenerable large files to keep backup sizes reasonable.
 backup: cold
 backup_exclude:
-  - tools/bin/chrome*
-  - tools/bin/.chrome*
-  - chrome-data/**
-  - .cache/**
+  - share/spacebot/tools/bin/chrome*
+  - share/spacebot/tools/bin/.chrome*
+  - share/spacebot/chrome-data/**
+  - share/spacebot/.cache/**
 
 options: {}
 schema: {}

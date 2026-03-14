@@ -7,8 +7,11 @@
 set -e
 
 # ---------------------------------------------------------------------------
-# 1. Ensure data directory exists.
+# 1. Use /share/spacebot as the data directory so it is visible from the
+#    HA host filesystem, File Editor, and Studio Code Server addons.
+#    /share is mounted by HA Supervisor when map: share:rw is set in config.yaml.
 # ---------------------------------------------------------------------------
+export SPACEBOT_DIR=/share/spacebot
 mkdir -p "${SPACEBOT_DIR}"
 
 # ---------------------------------------------------------------------------

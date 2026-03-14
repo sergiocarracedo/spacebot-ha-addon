@@ -1,5 +1,7 @@
 # Spacebot Home Assistant App Repository
 
+> **Disclaimer:** This project is not affiliated with, endorsed by, or officially supported by the Spacebot team or Spacedrive. It is an independent, community-maintained Home Assistant addon that packages the official Spacebot image.
+
 This repository provides the [Spacebot](https://spacebot.sh) AI agent as a Home Assistant App (formerly known as add-on).
 
 Spacebot is an AI agent for teams, communities, and multi-user environments. It connects to Discord, Slack, Telegram, and Twitch; remembers things across conversations via a typed memory graph; and can execute real tasks (shell, file, browser, coding) using background workers.
