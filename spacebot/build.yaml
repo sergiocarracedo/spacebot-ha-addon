@@ -1,0 +1,9 @@
+# https://developers.home-assistant.io/docs/apps/configuration#app-extended-build
+#
+# Use the official Spacebot image as the base for both supported architectures.
+# The image already includes the compiled Rust binary, all runtime deps,
+# Chrome libraries, bubblewrap sandbox, and the embedded web UI.
+# No compilation step needed here.
+build_from:
+  aarch64: ghcr.io/spacedriveapp/spacebot:v0.3.3
+  amd64: ghcr.io/spacedriveapp/spacebot:v0.3.3

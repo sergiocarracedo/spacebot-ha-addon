@@ -1,0 +1,2 @@
+network:
+  19898/tcp: Spacebot web control panel (direct access, optional)
