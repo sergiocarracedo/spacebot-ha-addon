@@ -1,0 +1,23 @@
+spacebot/DOCS.md
+  7cae3dc46a774c79 18-20,24,26,29,32,36,38,40,44,46,48,51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "bcb2b6084bff9be0bd290e8169860869b23c371a",
+  "prompts": {
+    "7cae3dc46a774c79": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_314419e22ffe95WlSOjHhORuSm",
+        "model": "github-copilot/claude-opus-4.6"
+      },
+      "human_author": "Sergio Carracedo <hi@sergiocarracedo.es>",
+      "messages": [],
+      "total_additions": 15,
+      "total_deletions": 24,
+      "accepted_lines": 15,
+      "overriden_lines": 0
+    }
+  }
+}
