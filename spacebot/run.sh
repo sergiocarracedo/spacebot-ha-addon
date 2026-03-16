@@ -53,7 +53,17 @@ mount --make-rshared / || echo "WARNING: mount --make-rshared failed (may need S
 echo "Node.js: $(node --version 2>&1 || echo 'NOT FOUND')"
 
 # ---------------------------------------------------------------------------
-# 5. Start nginx in the background (ingress proxy).
+# 5. Start ttyd web terminal in the background.
+#    Accessible via nginx at /terminal/ — useful for live container debugging.
+#    -W: writable (allow keyboard input)
+#    -p 7681: internal port (nginx proxies /terminal/ to this)
+#    -b /terminal: base path must match nginx location
+# ---------------------------------------------------------------------------
+echo "Starting ttyd web terminal (port 7681)..."
+ttyd -W -p 7681 -b /terminal /bin/bash &
+
+# ---------------------------------------------------------------------------
+# 6. Start nginx in the background (ingress proxy).
 # ---------------------------------------------------------------------------
 echo "Starting nginx ingress proxy (port 8099 → 127.0.0.1:19898)..."
 nginx -g "daemon off;" &
