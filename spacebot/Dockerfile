@@ -13,10 +13,11 @@ LABEL \
   io.hass.type="addon" \
   io.hass.arch="${BUILD_ARCH}"
 
-# Install nginx (ingress proxy) and Node.js 20.x (needed for MCP servers
-# that use npx, e.g. home-assistant-mcp-server).
-# nginx listens on 8099 (ingress port), only accepts connections from
-# 172.30.32.2 (HA Ingress), and forwards to Spacebot on 127.0.0.1:19898.
+# Install nginx (ingress proxy), Node.js 20.x, bun, and home-assistant-mcp-server.
+# home-assistant-mcp-server@1.0.2 ships TypeScript source only — bun is required
+# both to build it (bun run build → dist/index.js) and to run it at runtime
+# (bin/hass-mcp.js spawns bun dist/index.js). We install bun first, then npm
+# install the package, then build it in-place so dist/index.js exists in the image.
 RUN apt-get update && \
     apt-get install -y --no-install-recommends nginx ca-certificates curl gnupg unzip && \
     mkdir -p /etc/apt/keyrings && \
@@ -27,10 +28,12 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install -y --no-install-recommends nodejs && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
-    npm install -g home-assistant-mcp-server && \
     curl -fsSL https://bun.sh/install | bash && \
     ln -s /root/.bun/bin/bun /usr/local/bin/bun && \
-    ln -s /root/.bun/bin/bunx /usr/local/bin/bunx
+    ln -s /root/.bun/bin/bunx /usr/local/bin/bunx && \
+    npm install -g home-assistant-mcp-server && \
+    cd /usr/lib/node_modules/home-assistant-mcp-server && \
+    /root/.bun/bin/bun run build
 
 # Install ttyd (web-based terminal) for interactive container debugging.
 # ttyd is not in Debian 12 apt repos so we download the static binary from
