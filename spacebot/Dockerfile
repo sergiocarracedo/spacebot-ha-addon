@@ -29,6 +29,19 @@ RUN apt-get update && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
     npm install -g home-assistant-mcp-server
 
+# Install ttyd (web-based terminal) for interactive container debugging.
+# ttyd is not in Debian 12 apt repos so we download the static binary from
+# GitHub releases. We select the binary by architecture using BUILD_ARCH.
+ARG BUILD_ARCH
+RUN case "${BUILD_ARCH}" in \
+      amd64)   TTYD_BIN="ttyd.x86_64" ;; \
+      aarch64) TTYD_BIN="ttyd.aarch64" ;; \
+      *) echo "Unsupported arch: ${BUILD_ARCH}" && exit 1 ;; \
+    esac && \
+    curl -fsSL "https://github.com/tsl0922/ttyd/releases/download/1.7.7/${TTYD_BIN}" \
+      -o /usr/local/bin/ttyd && \
+    chmod +x /usr/local/bin/ttyd
+
 # Override SPACEBOT_DIR to use HA's /data persistent volume.
 ENV SPACEBOT_DIR=/data
 
