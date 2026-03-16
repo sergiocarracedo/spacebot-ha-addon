@@ -18,7 +18,7 @@ LABEL \
 # nginx listens on 8099 (ingress port), only accepts connections from
 # 172.30.32.2 (HA Ingress), and forwards to Spacebot on 127.0.0.1:19898.
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends nginx ca-certificates curl gnupg && \
+    apt-get install -y --no-install-recommends nginx ca-certificates curl gnupg unzip && \
     mkdir -p /etc/apt/keyrings && \
     curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key \
       | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
@@ -27,7 +27,10 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install -y --no-install-recommends nodejs && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
-    npm install -g home-assistant-mcp-server
+    npm install -g home-assistant-mcp-server && \
+    curl -fsSL https://bun.sh/install | bash && \
+    ln -s /root/.bun/bin/bun /usr/local/bin/bun && \
+    ln -s /root/.bun/bin/bunx /usr/local/bin/bunx
 
 # Install ttyd (web-based terminal) for interactive container debugging.
 # ttyd is not in Debian 12 apt repos so we download the static binary from
