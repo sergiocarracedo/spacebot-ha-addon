@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.13
+
+- Switch MCP server launch from `node hass-mcp.js` to `npx -y home-assistant-mcp-server` — more robust, no manual build step needed.
+- Pre-cache `home-assistant-mcp-server` via `npx` during Docker build so it doesn't need internet at runtime.
+- Keep `bun`/`bunx` in the image as an alternative runtime.
+- Drop `npm install -g` + `bun run build` steps from Dockerfile.
+
 ## 0.3.12
 
 - Inject a floating `>_ terminal` button into the Spacebot UI (bottom-right corner) via nginx `sub_filter`. Opens the ttyd web terminal in a new browser tab.
