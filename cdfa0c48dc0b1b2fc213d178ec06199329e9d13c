@@ -1,0 +1,23 @@
+spacebot/CHANGELOG.md
+  ba42524971b0653f 3-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "cdfa0c48dc0b1b2fc213d178ec06199329e9d13c",
+  "prompts": {
+    "ba42524971b0653f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_309963d4fffeAK45JxsA2w1HQ8",
+        "model": "anthropic/claude-sonnet-4-6"
+      },
+      "human_author": "Sergio Carracedo <hi@sergiocarracedo.es>",
+      "messages": [],
+      "total_additions": 36,
+      "total_deletions": 0,
+      "accepted_lines": 36,
+      "overriden_lines": 0
+    }
+  }
+}
