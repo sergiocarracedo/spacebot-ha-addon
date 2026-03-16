@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.14
+
+- Change floating terminal button label from `>_ terminal` to `>_`; set `title` and `alt` to "Spacebot container terminal".
+
 ## 0.3.13
 
 - Switch MCP server launch from `node hass-mcp.js` to `npx -y home-assistant-mcp-server` — more robust, no manual build step needed.
