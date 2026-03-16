@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.15
+
+- Fix Gemini 400 Bad Request errors for teixubot: switch model from `gemini-flash-latest` (resolves to `gemini-3-flash-preview`) to `gemini-2.5-flash`.
+  - Root cause: `gemini-3-flash-preview` rejects conversation history containing long base64/JWT strings in tool results with a 400, and also produces malformed streamed tool-call arguments (trailing characters after JSON). `gemini-2.5-flash` handles both cases correctly.
+
 ## 0.3.14
 
 - Change floating terminal button label from `>_ terminal` to `>_`; set `title` and `alt` to "Spacebot container terminal".
