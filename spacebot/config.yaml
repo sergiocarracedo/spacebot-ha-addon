@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/apps/configuration
 name: Spacebot
-version: "v0.3.3"
+version: "v0.3.4"
 slug: spacebot
 description: >-
   AI agent for teams, communities, and multi-user environments.
@@ -12,6 +12,13 @@ arch:
 
 # Do not use HA's init — Spacebot manages its own processes
 init: false
+
+# Spacebot's workers use bubblewrap (bwrap) for sandboxing, which requires
+# Linux user namespaces. These are blocked in unprivileged containers, causing
+# "bwrap: Creating new namespace failed: Operation not permitted".
+# SYS_ADMIN grants the capability to create new namespaces, enabling bwrap.
+privileged:
+  - SYS_ADMIN
 
 # Start before HA core so integrations can reach it
 startup: services
