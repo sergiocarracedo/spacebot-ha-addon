@@ -39,13 +39,24 @@ else
 fi
 
 # ---------------------------------------------------------------------------
-# 3. Start nginx in the background (ingress proxy).
+# 3. Fix mount propagation for bwrap sandboxing.
+#    Docker sets root mount propagation to 'private' by default, which prevents
+#    bwrap from calling mount(MS_SLAVE) on '/'. With SYS_ADMIN we can promote
+#    it to 'shared' so bwrap can make it slave inside its own namespace.
+#    This resolves: "bwrap: Failed to make / slave: Permission denied"
+# ---------------------------------------------------------------------------
+mount --make-rshared / || echo "WARNING: mount --make-rshared failed (may need SYS_ADMIN)"
+
+# ---------------------------------------------------------------------------
+# 4. Start nginx in the background (ingress proxy).
 # ---------------------------------------------------------------------------
 echo "Starting nginx ingress proxy (port 8099 → 127.0.0.1:19898)..."
 nginx -g "daemon off;" &
 
 # ---------------------------------------------------------------------------
-# 4. Start Spacebot in the foreground.
+# 4. Start Spacebot in the foreground, tee-ing output to a log file so it
+#    is visible from the HA File Editor at /share/spacebot/spacebot.log.
 # ---------------------------------------------------------------------------
-echo "Starting Spacebot (SPACEBOT_DIR=${SPACEBOT_DIR})..."
-exec spacebot start --foreground
+LOG_FILE="${SPACEBOT_DIR}/spacebot.log"
+echo "Starting Spacebot (SPACEBOT_DIR=${SPACEBOT_DIR}, log=${LOG_FILE})..."
+exec spacebot start --foreground 2>&1 | tee "${LOG_FILE}"
