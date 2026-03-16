@@ -48,7 +48,12 @@ fi
 mount --make-rshared / || echo "WARNING: mount --make-rshared failed (may need SYS_ADMIN)"
 
 # ---------------------------------------------------------------------------
-# 4. Start nginx in the background (ingress proxy).
+# 4. Verify Node.js is available (needed for MCP servers).
+# ---------------------------------------------------------------------------
+echo "Node.js: $(node --version 2>&1 || echo 'NOT FOUND')"
+
+# ---------------------------------------------------------------------------
+# 5. Start nginx in the background (ingress proxy).
 # ---------------------------------------------------------------------------
 echo "Starting nginx ingress proxy (port 8099 → 127.0.0.1:19898)..."
 nginx -g "daemon off;" &
