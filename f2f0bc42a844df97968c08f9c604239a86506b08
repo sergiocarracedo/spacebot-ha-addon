@@ -1,0 +1,29 @@
+spacebot/Dockerfile
+  ba42524971b0653f 32-44
+spacebot/nginx-ingress.conf
+  ba42524971b0653f 35-46
+spacebot/config.yaml
+  ba42524971b0653f 3
+spacebot/run.sh
+  ba42524971b0653f 56-66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "f2f0bc42a844df97968c08f9c604239a86506b08",
+  "prompts": {
+    "ba42524971b0653f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_309963d4fffeAK45JxsA2w1HQ8",
+        "model": "anthropic/claude-sonnet-4-6"
+      },
+      "human_author": "Sergio Carracedo <hi@sergiocarracedo.es>",
+      "messages": [],
+      "total_additions": 37,
+      "total_deletions": 2,
+      "accepted_lines": 37,
+      "overriden_lines": 0
+    }
+  }
+}
