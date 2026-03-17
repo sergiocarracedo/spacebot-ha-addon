@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.15
+
+- Increase nginx ingress upload limit to `100m` (`client_max_body_size`) to fix `413 Content Too Large` errors during ingest file uploads.
+
 ## 0.3.14
 
 - Change floating terminal button label from `>_ terminal` to `>_`; set `title` and `alt` to "Spacebot container terminal".
