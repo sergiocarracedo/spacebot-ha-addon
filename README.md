@@ -13,7 +13,7 @@ Spacebot is an AI agent for teams, communities, and multi-user environments. It 
 3. Click the three-dot menu (top right) → **Repositories**.
 4. Add this repository URL:
    ```
-   https://github.com/sergiocarracedo/spacebot-addon
+   https://github.com/sergiocarracedo/spacebot-ha-addon
    ```
 5. Find **Spacebot** in the store and install it.
 
