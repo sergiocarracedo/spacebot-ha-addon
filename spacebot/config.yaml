@@ -5,7 +5,7 @@ slug: spacebot
 description: >-
   AI agent for teams, communities, and multi-user environments.
   Thinks, executes, and responds — concurrently, not sequentially.
-url: https://github.com/sergiocarracedo/spacebot-addon/tree/main/spacebot
+url: https://github.com/sergiocarracedo/spacebot-ha-addon/tree/main/spacebot
 arch:
   - aarch64
   - amd64
