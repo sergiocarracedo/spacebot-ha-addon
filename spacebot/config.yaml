@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/apps/configuration
 name: Spacebot
-version: "v0.3.16"
+version: 'v0.4.0'
 slug: spacebot
 description: >-
   AI agent for teams, communities, and multi-user environments.

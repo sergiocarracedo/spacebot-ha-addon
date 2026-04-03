@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0
+
+- Uses spacebot [0.4.0](https://github.com/spacedriveapp/spacebot/releases/tag/v0.4.0) release
+
 ## 0.3.16
 
 - Disable AppArmor for the addon to allow `mount --make-rshared /` before `bwrap` sandboxing.
