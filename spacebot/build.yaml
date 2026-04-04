@@ -5,5 +5,5 @@
 # Chrome libraries, bubblewrap sandbox, and the embedded web UI.
 # No compilation step needed here.
 build_from:
-  aarch64: ghcr.io/spacedriveapp/spacebot:v0.4.0
-  amd64: ghcr.io/spacedriveapp/spacebot:v0.4.0
+  aarch64: ghcr.io/spacedriveapp/spacebot:v0.4.1
+  amd64: ghcr.io/spacedriveapp/spacebot:v0.4.1

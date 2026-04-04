@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.1
+
+- Uses spacebot [0.4.1](https://github.com/spacedriveapp/spacebot/releases/tag/v0.4.1) release
+
 ## 0.4.0
 
 - Uses spacebot [0.4.0](https://github.com/spacedriveapp/spacebot/releases/tag/v0.4.0) release
