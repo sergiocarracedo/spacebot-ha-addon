@@ -11,7 +11,7 @@ Requirements:
 
 Behavior:
 
-- Runs hourly and on manual dispatch.
+- Runs daily at 03:17 UTC and on manual dispatch.
 - Ignores draft and prerelease upstream releases.
 - Updates `spacebot/build.yaml`, `spacebot/config.yaml`, and `spacebot/CHANGELOG.md`.
 - Creates a direct commit on `main` only when the upstream stable tag changes.
