@@ -1,0 +1,40 @@
+.github/workflows/bump-spacebot.yml
+  ca235d77f6874e59 5
+.github/README.md
+  ca235d77f6874e59 14
+README.md
+  ca235d77f6874e59 43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "b2c520702d43ef41e0e06b52a3318a3d7132d013",
+  "prompts": {
+    "6f05681eed041cef": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_2f3687832ffefu3b2fGxrkYPGI",
+        "model": "github-copilot/gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 11,
+      "overriden_lines": 0
+    },
+    "ca235d77f6874e59": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_262dd7307ffeJGj4lGLNp2SAMb",
+        "model": "github-copilot/gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo",
+      "messages": [],
+      "total_additions": 3,
+      "total_deletions": 2,
+      "accepted_lines": 3,
+      "overriden_lines": 0
+    }
+  }
+}
