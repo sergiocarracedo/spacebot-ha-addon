@@ -33,3 +33,15 @@ See [DOCS.md](spacebot/DOCS.md) for full configuration and usage instructions.
 - [Spacebot website](https://spacebot.sh)
 - [Spacebot documentation](https://docs.spacebot.sh)
 - [Spacebot GitHub](https://github.com/spacedriveapp/spacebot)
+
+## Release Automation
+
+This repository includes a GitHub Actions workflow that tracks stable upstream
+Spacebot releases and bumps the Home Assistant app metadata automatically.
+
+- Workflow: `.github/workflows/bump-spacebot.yml`
+- Behavior: updates `spacebot/build.yaml`, `spacebot/config.yaml`, and
+  `spacebot/CHANGELOG.md`
+- Publish mode: direct push to `main` when a newer stable upstream release is found
+
+For this to work, GitHub Actions must be allowed to push to the default branch.
