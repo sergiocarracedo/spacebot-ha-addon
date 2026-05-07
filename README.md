@@ -1,48 +1,56 @@
 # Spacebot Home Assistant App Repository
 
-> **Disclaimer:** This project is not affiliated with, endorsed by, or officially supported by the Spacebot team or Spacedrive. It is an independent, community-maintained Home Assistant addon that packages the official Spacebot image.
+This repository packages [Spacebot](https://spacebot.sh) as a Home Assistant App
+(formerly known as an add-on).
 
-This repository provides the [Spacebot](https://spacebot.sh) AI agent as a Home Assistant App (formerly known as add-on).
+Spacebot is an AI agent for teams, communities, and multi-user environments. It
+can connect to Discord, Slack, Telegram, and Twitch; remember context across
+conversations; and execute real work with shell, file, browser, and coding
+tools.
 
-Spacebot is an AI agent for teams, communities, and multi-user environments. It connects to Discord, Slack, Telegram, and Twitch; remembers things across conversations via a typed memory graph; and can execute real tasks (shell, file, browser, coding) using background workers.
+This Home Assistant package wraps the official upstream Spacebot image so it can
+run cleanly inside Home Assistant OS with ingress support, persistent storage,
+and backup-friendly data locations.
+
+> **Disclaimer:** This project is not affiliated with, endorsed by, or
+> officially supported by the Spacebot team or Spacedrive. It is an independent,
+> community-maintained Home Assistant app.
+
+## What This Adds
+
+- Home Assistant sidebar access through ingress
+- Persistent data under `/share/spacebot`
+- Backup-aware storage layout for Home Assistant
+- A packaged Spacebot runtime for `aarch64` and `amd64`
 
 ## Installation
 
 1. Open Home Assistant.
-2. Go to **Settings → Apps → App store**.
-3. Click the three-dot menu (top right) → **Repositories**.
+2. Go to **Settings -> Apps -> App store**.
+3. Open the three-dot menu and select **Repositories**.
 4. Add this repository URL:
-   ```
-   https://github.com/sergiocarracedo/spacebot-ha-addon
-   ```
+
+```text
+https://github.com/sergiocarracedo/spacebot-ha-addon
+```
+
 5. Find **Spacebot** in the store and install it.
+6. Start the app.
+7. Open the web UI from the Home Assistant sidebar or the app page.
 
-## Apps
+## Spacebot
 
-### Spacebot
+[![Supports aarch64](https://img.shields.io/badge/aarch64-yes-green.svg)](https://github.com/sergiocarracedo/spacebot-ha-addon)
+[![Supports amd64](https://img.shields.io/badge/amd64-yes-green.svg)](https://github.com/sergiocarracedo/spacebot-ha-addon)
 
-[![Supports aarch64](https://img.shields.io/badge/aarch64-yes-green.svg)](https://github.com/sergiocarracedo/spacebot-addon)
-[![Supports amd64](https://img.shields.io/badge/amd64-yes-green.svg)](https://github.com/sergiocarracedo/spacebot-addon)
+Spacebot runs its own control panel and configuration flow. Most setup happens
+inside the Spacebot web UI, not in the Home Assistant app options panel.
 
-AI agent that connects to your messaging platforms (Discord, Telegram, Slack, Twitch) and can think, remember, and execute real tasks autonomously.
-
-See [DOCS.md](spacebot/DOCS.md) for full configuration and usage instructions.
+For full app-specific details, see [`spacebot/DOCS.md`](spacebot/DOCS.md).
 
 ## Links
 
 - [Spacebot website](https://spacebot.sh)
 - [Spacebot documentation](https://docs.spacebot.sh)
-- [Spacebot GitHub](https://github.com/spacedriveapp/spacebot)
-
-## Release Automation
-
-This repository includes a GitHub Actions workflow that tracks stable upstream
-Spacebot releases and bumps the Home Assistant app metadata automatically.
-
-- Workflow: `.github/workflows/bump-spacebot.yml`
-- Schedule: daily at `03:17 UTC`
-- Behavior: updates `spacebot/Dockerfile`, `spacebot/build.yaml`,
-  `spacebot/config.yaml`, and `spacebot/CHANGELOG.md`
-- Publish mode: direct push to `main` when a newer stable upstream release is found
-
-For this to work, GitHub Actions must be allowed to push to the default branch.
+- [Spacebot upstream GitHub](https://github.com/spacedriveapp/spacebot)
+- [Spacebot add-on docs in this repo](spacebot/DOCS.md)
