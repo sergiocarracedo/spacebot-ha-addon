@@ -53,6 +53,7 @@ fi
 
 version_without_v="${latest_tag#v}"
 release_url="https://github.com/spacedriveapp/spacebot/releases/tag/${latest_tag}"
+upstream_changelog_url="https://github.com/spacedriveapp/spacebot/blob/main/CHANGELOG.md"
 
 sed -i -E "s|^(  aarch64: ghcr\.io/spacedriveapp/spacebot:).*$|\\1${latest_tag}|" "$build_yaml"
 sed -i -E "s|^(  amd64: ghcr\.io/spacedriveapp/spacebot:).*$|\\1${latest_tag}|" "$build_yaml"
@@ -64,7 +65,8 @@ if ! grep -Fq "## ${version_without_v}" "$changelog_md"; then
   {
     printf '# Changelog\n\n'
     printf '## %s\n\n' "$version_without_v"
-    printf -- '- Uses spacebot [%s](%s) release\n\n' "$version_without_v" "$release_url"
+    printf -- '- Uses spacebot [%s](%s) release\n' "$version_without_v" "$release_url"
+    printf -- '- Upstream changelog: [CHANGELOG.md](%s)\n\n' "$upstream_changelog_url"
     tail -n +3 "$changelog_md"
   } > "$changelog_tmp"
   mv "$changelog_tmp" "$changelog_md"
