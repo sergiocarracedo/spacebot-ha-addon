@@ -1,0 +1,19 @@
+spacebot/Dockerfile
+  s_ca235d77f6874e::t_dc5baecec6680f 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.1",
+  "base_commit_sha": "cd21e60a4947d518718b3843dd900f161003b15e",
+  "prompts": {},
+  "sessions": {
+    "s_ca235d77f6874e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_262dd7307ffeJGj4lGLNp2SAMb",
+        "model": "gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo <hi@sergiocarracedo.es>"
+    }
+  }
+}
