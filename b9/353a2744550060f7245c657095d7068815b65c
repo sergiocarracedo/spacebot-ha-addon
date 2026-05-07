@@ -1,0 +1,19 @@
+.github/scripts/bump-spacebot.sh
+  s_ca235d77f6874e::t_b6edb45339a807 56,68-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.1",
+  "base_commit_sha": "b9353a2744550060f7245c657095d7068815b65c",
+  "prompts": {},
+  "sessions": {
+    "s_ca235d77f6874e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_262dd7307ffeJGj4lGLNp2SAMb",
+        "model": "gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo <hi@sergiocarracedo.es>"
+    }
+  }
+}
