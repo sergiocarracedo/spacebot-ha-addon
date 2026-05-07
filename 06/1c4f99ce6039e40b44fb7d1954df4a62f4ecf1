@@ -1,0 +1,19 @@
+README.md
+  s_ca235d77f6874e::t_023fb2dd5b527d 3-4,6-9,11-24,29-30,33-39,41,43-44,46-47,49,55-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.1",
+  "base_commit_sha": "061c4f99ce6039e40b44fb7d1954df4a62f4ecf1",
+  "prompts": {},
+  "sessions": {
+    "s_ca235d77f6874e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_262dd7307ffeJGj4lGLNp2SAMb",
+        "model": "gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo <hi@sergiocarracedo.es>"
+    }
+  }
+}
