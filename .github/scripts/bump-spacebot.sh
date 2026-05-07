@@ -4,6 +4,7 @@ set -euo pipefail
 
 repo_root="$(git rev-parse --show-toplevel)"
 build_yaml="$repo_root/spacebot/build.yaml"
+dockerfile="$repo_root/spacebot/Dockerfile"
 config_yaml="$repo_root/spacebot/config.yaml"
 changelog_md="$repo_root/spacebot/CHANGELOG.md"
 release_json="$(mktemp)"
@@ -21,6 +22,7 @@ require_file() {
 }
 
 require_file "$build_yaml"
+require_file "$dockerfile"
 require_file "$config_yaml"
 require_file "$changelog_md"
 
@@ -54,6 +56,7 @@ release_url="https://github.com/spacedriveapp/spacebot/releases/tag/${latest_tag
 
 sed -i -E "s|^(  aarch64: ghcr\.io/spacedriveapp/spacebot:).*$|\\1${latest_tag}|" "$build_yaml"
 sed -i -E "s|^(  amd64: ghcr\.io/spacedriveapp/spacebot:).*$|\\1${latest_tag}|" "$build_yaml"
+sed -i -E "s|^(ARG BUILD_FROM=ghcr\.io/spacedriveapp/spacebot:).*$|\\1${latest_tag}|" "$dockerfile"
 sed -i -E "s|^(version: ').*(')$|\\1${latest_tag}\\2|" "$config_yaml"
 
 if ! grep -Fq "## ${version_without_v}" "$changelog_md"; then

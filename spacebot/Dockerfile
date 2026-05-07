@@ -1,9 +1,10 @@
 # https://developers.home-assistant.io/docs/apps/configuration#app-dockerfile
 #
 # BUILD_FROM is resolved by HA builder to the image defined in build.yaml.
+# Keep a pinned default so plain Docker builds and linters see a valid base image.
 # The upstream Spacebot image (Debian 12) contains the compiled binary,
 # all runtime deps, and the embedded web UI.
-ARG BUILD_FROM
+ARG BUILD_FROM=ghcr.io/spacedriveapp/spacebot:v0.4.1
 FROM $BUILD_FROM
 
 # HA app labels (required when not using the HA builder auto-labeling)

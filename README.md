@@ -41,8 +41,8 @@ Spacebot releases and bumps the Home Assistant app metadata automatically.
 
 - Workflow: `.github/workflows/bump-spacebot.yml`
 - Schedule: daily at `03:17 UTC`
-- Behavior: updates `spacebot/build.yaml`, `spacebot/config.yaml`, and
-  `spacebot/CHANGELOG.md`
+- Behavior: updates `spacebot/Dockerfile`, `spacebot/build.yaml`,
+  `spacebot/config.yaml`, and `spacebot/CHANGELOG.md`
 - Publish mode: direct push to `main` when a newer stable upstream release is found
 
 For this to work, GitHub Actions must be allowed to push to the default branch.
