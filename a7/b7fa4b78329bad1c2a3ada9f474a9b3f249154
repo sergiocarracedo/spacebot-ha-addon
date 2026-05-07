@@ -1,0 +1,21 @@
+README.md
+  s_ca235d77f6874e::t_b57143a5a8a715 51-72
+spacebot/DOCS.md
+  s_ca235d77f6874e::t_b57143a5a8a715 38-53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.1",
+  "base_commit_sha": "a7b7fa4b78329bad1c2a3ada9f474a9b3f249154",
+  "prompts": {},
+  "sessions": {
+    "s_ca235d77f6874e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_262dd7307ffeJGj4lGLNp2SAMb",
+        "model": "gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo <hi@sergiocarracedo.es>"
+    }
+  }
+}
