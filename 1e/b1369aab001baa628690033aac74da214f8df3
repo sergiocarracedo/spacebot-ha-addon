@@ -1,0 +1,33 @@
+spacebot/build.yaml
+  s_ca235d77f6874e::t_b2f5d21e5aebe3 8-9
+spacebot/config.yaml
+  s_ca235d77f6874e::t_b2f5d21e5aebe3 3
+.github/scripts/bump-spacebot.sh
+  s_ca235d77f6874e::t_65b547b996125e 7,25,59
+README.md
+  s_ca235d77f6874e::t_1dfe84929d6246 44-45
+spacebot/Dockerfile
+  s_ca235d77f6874e::t_65b547b996125e 4,7
+.github/workflows/bump-spacebot.yml
+  s_ca235d77f6874e::t_1dfe84929d6246 51
+spacebot/CHANGELOG.md
+  s_ca235d77f6874e::t_b2f5d21e5aebe3 3-6
+.github/README.md
+  s_ca235d77f6874e::t_1dfe84929d6246 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.1",
+  "base_commit_sha": "1eb1369aab001baa628690033aac74da214f8df3",
+  "prompts": {},
+  "sessions": {
+    "s_ca235d77f6874e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_262dd7307ffeJGj4lGLNp2SAMb",
+        "model": "gpt-5.4"
+      },
+      "human_author": "Sergio Carracedo <hi@sergiocarracedo.es>"
+    }
+  }
+}
