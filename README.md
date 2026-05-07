@@ -48,6 +48,28 @@ inside the Spacebot web UI, not in the Home Assistant app options panel.
 
 For full app-specific details, see [`spacebot/DOCS.md`](spacebot/DOCS.md).
 
+## Add-on Architecture
+
+This add-on is a thin Home Assistant wrapper around the official upstream
+Spacebot image.
+
+- `spacebot` runs as the main process and stores its runtime data in
+  `/share/spacebot`
+- `nginx` runs inside the same container and acts as the Home Assistant ingress
+  reverse proxy
+- `ttyd` runs inside the container and provides a browser-based shell for
+  debugging or recovery when direct container access is needed
+
+The web UI is not exposed directly on the network. Spacebot listens on
+`127.0.0.1:19898`, and nginx proxies Home Assistant ingress traffic from port
+`8099` to that internal Spacebot port. The same reverse proxy also exposes the
+optional shell at `/terminal/`, which forwards to the internal `ttyd` process on
+port `7681`.
+
+This means Home Assistant remains the single entry point for the add-on UI while
+still allowing controlled, in-browser shell access to the Spacebot container if
+you need to inspect files, verify processes, or troubleshoot startup issues.
+
 ## Links
 
 - [Spacebot website](https://spacebot.sh)

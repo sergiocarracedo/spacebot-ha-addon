@@ -35,6 +35,22 @@ This path is accessible from the HA host filesystem and from the **File Editor**
 
 The Spacebot control panel is only accessible through HA Ingress — either via the **Spacebot** sidebar entry or the **OPEN WEB UI** button on the app page. Port 19898 is not exposed externally.
 
+## Add-on architecture
+
+This add-on runs three pieces inside the same container:
+
+- **Spacebot** as the main application process
+- **nginx** as the ingress reverse proxy used by Home Assistant
+- **ttyd** as a browser-based shell endpoint for container management when needed
+
+Spacebot itself is bound to `127.0.0.1:19898`, not to a public interface.
+nginx listens on the Home Assistant ingress port and proxies requests to the
+internal Spacebot server. It also exposes `/terminal/`, which forwards to the
+internal `ttyd` process on port `7681`.
+
+This design keeps the add-on UI behind Home Assistant ingress while still making
+an emergency or debugging shell available from the browser when necessary.
+
 ## Data storage
 
 All Spacebot data (config, memories, conversations, embeddings) is stored under `/share/spacebot/` on the Home Assistant host. This makes it directly browsable from the **File Editor** and **Studio Code Server** addons without any extra configuration.
